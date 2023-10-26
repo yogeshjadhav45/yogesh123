@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        traffic light simulator
+    </h1>
+    <p>
+        click the button to simulate a traffic 
+    </p>
+    <button onclick="changeTrafficLight()">change Light</button>
+    <div id="trafficLight">
+        <div id="redLight" class="light"></div>
+            <div id="yellowLight" class="light"></div>
+                <div id="greenLight" class="light"></div>
+
+
+
+
+    </div>
+    <script>
+        let currentLight  = "red";
+        function changeTrafficLight(){
+            const redlight=
+            document.getElementById('redLight');
+            const yellowLight=document.getElementById('yellowLight');
+            const greenlight= document.getElementById('greenLight');
+        
+        switch(currentLight){
+            case "red":
+                redLight.style.backgroundColor="white";
+                greenLight.style.backgroundColor="green";
+                currentLight="green";
+                break;
+                case "green":
+                    greenLight.style.backgroundColor="white";
+                    yellowLight.style.backgroundColor="yellow";
+                    currentLight="yellow";
+                    break;
+                    case "yellow":
+                        yellowLight.style.backgroundColor="white";
+                        redLight.style.backgroundColor="red";
+                        currentLight="red";
+                        break;
+                        default:
+                            break;
+        }
+        }
+    </script>
+    <style>
+        .light{
+            width: 50px; height: 50px;
+            border: 2px solid black;
+            border-radius: 50%;
+            margin: 10px;
+        }
+    </style>
+</body>
+</html>
